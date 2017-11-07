@@ -1,0 +1,195 @@
+@import 'base';
+@import '~normalize.css/normalize';
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+// Some best-practice CSS that's useful for most apps
+// Just remove them if they're not what you want
+
+$main-color: #e9ebee;
+
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  background-color: $main-color;
+  overflow: auto;
+  font-family: 'Raleway', sans-serif;
+}
+ul{
+  padding: 0;
+}
+
+a:hover, a:visited, a:link, a:active{
+    text-decoration: none;
+  }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+header{
+	position: absolute;
+  width: 100%;
+  top:0;
+  z-index: 100;
+  padding: 0 20px;
+  height: 80px;
+	// background: rgba(25,29,34,.75);
+  -webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* Safari */
+  transition: width 2s, height 2s, transform 2s;
+	a{
+		color: #fff;
+	}
+}
+
+
+header.bg{
+  position: fixed;
+  background: #000;
+  height: 60px;
+  z-index: 99;
+  .logo{
+    margin: 5px;
+    img{
+      width:50px;
+      height:50px
+    }
+  }
+}
+
+nav{
+	/*display: inline-block;*/
+	color: #fff;
+	float: right;
+	ul{
+		margin: 0;
+
+	}
+	li.avt-user{
+		display: inline-block;
+		padding: 10px 20px;
+		position: relative;
+	}
+  li.free{
+      color: #6bb551;
+      font-size: 14px;
+      a{
+        background: none;
+        border: 1px solid #6bb551;
+        border-radius: 3px;
+        padding: 3px 10px;
+        color: #6bb551;
+      }
+  }
+}
+
+
+.logo, .full-search{
+	margin: 8px 5px;
+    float: left;
+    padding: 0;
+}
+.logo{
+	img{
+		width: 60px;
+		height: 60px;
+		border-radius: 20px;
+    transition-delay: 0.8s;
+    transition-duration: 0.8s;
+    transition-property: all;
+    transition-timing-function: ease;
+	}
+}
+
+.content-wrapper{
+	background-color: $main-color;
+	color: #000;
+}
+
+.wrapper{
+  // margin-top:46px;
+  overflow: hidden;
+}
+
+.menu-context{
+    position: absolute;
+    color: #666;
+    background-color: #fff;
+    right: -0;
+    border-radius: 0 0 3px 3px;
+    a{
+      color: $menu_text;
+    }
+    p{
+      padding: 5px 20px 0 20px;
+      margin: 0px 5px
+    }
+}
+
+.list-item{
+    list-style: none;
+    overflow: hidden;
+    li{
+      background-color: #fff;
+      border-radius: 5px;
+      margin: 5px 0;
+      padding: 5px;
+    }
+    img{
+      max-width: 100%;
+    }
+}
+.border-right{
+  border-right: 1px solid #e5e5e5;
+  height: 100%;
+  display: inline;
+}
+
+button.no-color{
+  border: none;
+  background-color: inherit;
+}
+
+.toolbox{
+  background-color: #fff;
+  margin-bottom: 20px;
+  .toolbox-title{
+    border-bottom: 1px solid #e5e5e5;
+    color: #90949c;
+  }
+  ul{
+    margin: 10px;
+  }
+  li{
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+}
+
+.entry-img{
+  width: 100%;
+}
+
+.z-banner, .z-banner2, .z-banner3{
+  height: 100vh;
+  position:relative;
+}
+
+.z-banner{
+  background: url('static/images/banner.jpg') no-repeat 100% 20%;
+}
+
+.z-banner2{
+  background: url('static/images/banner2.jpg') no-repeat 100% 20%;
+}
+
+.z-banner3{
+  background: url('static/images/banner2.jpg') no-repeat 100% 20%;
+}
