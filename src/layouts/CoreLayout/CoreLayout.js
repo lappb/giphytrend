@@ -44,8 +44,8 @@ class CoreLayout extends Component {
           <div className='main'>
             <Sack zcss={['pdT1e']}>
               <Container zcss={['pd1e']} style={{ backgroundColor: 'rgb(246, 249, 250)' }} >
-                <Columns xLargeCol={12} smallCol={1} gutter='8px'>
-                  <Column zcss={['']} xLargeCell={3} smallCell={1}>
+                <Columns xLargeCol={12} largeCol={12} smallCol={1} gutter='8px'>
+                  <Column zcss={['']} xLargeCell={3} largeCell={3} smallCell={1}>
                     <Menu zcss={['fw400']}>
                       <MenuGroup>
                         <MenuLabel>FRAMEWORK</MenuLabel>
@@ -99,12 +99,12 @@ class CoreLayout extends Component {
                           <li>
                             <Link
                               style={{ color: 'rgba(0,0,0,.86)' }}
-                              href='https://github.com/'
+                              href='https://github.com/CassetteRocks/react-infinite-scroller'
                             >
                               <Icon
                                 zcss={['f1e']}
                                 icon='fa fa-ravelry'
-                                text='React mansory'
+                                text='React infinite scroller'
                               />
                             </Link>
 
@@ -114,12 +114,12 @@ class CoreLayout extends Component {
                           <li>
                             <Link
                               style={{ color: 'rgba(0,0,0,.86)' }}
-                              href='https://github.com/'
+                              href='https://github.com/eiriklv/react-masonry-component'
                             >
                               <Icon
                                 zcss={['f1e']}
                                 icon='fa fa-ravelry'
-                                text='React infinity'
+                                text='React masonry component'
                               />
                             </Link>
 
@@ -128,7 +128,7 @@ class CoreLayout extends Component {
                       </MenuGroup>
                     </Menu>
                   </Column>
-                  <Column zcss={['']} xLargeCell={9} smallCell={1} >
+                  <Column zcss={['']} xLargeCell={9} largeCell={9} smallCell={1} >
                     {this.props.children}
                   </Column>
                 </Columns>

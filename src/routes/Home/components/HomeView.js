@@ -1,6 +1,8 @@
 import React, { PropTypes, Component } from 'react'
-import { Columns, Column, Box } from 'react-zet-com'
-import MasonryInfiniteScroller from 'react-masonry-infinite'
+import { Columns, Column, Box, Avatar, Link, Sack } from 'react-zet-com'
+// import Masonry from 'react-masonry-infinite'
+import Masonry from 'react-masonry-component'
+import InfiniteScroll from 'react-infinite-scroller'
 import './HomeView.scss'
 import GifItem from '../../../components/GifItem'
 
@@ -13,7 +15,7 @@ class HomeView extends Component {
   }
 
   componentDidMount () {
-    // this.props.getGifTrend(1)
+    this.props.getGifTrend(1)
   }
 
   loadMore = (pageToLoad) => {
@@ -27,16 +29,36 @@ class HomeView extends Component {
   render () {
     const { gifs, offset } = this.props
     return (
-      <MasonryInfiniteScroller className='masonry' hasMore loadMore={this.loadMore} pageStart={0}>
+      <InfiniteScroll
+        pageStart={0}
+        loadMore={this.loadMore}
+        hasMore
+        loader={<div className='sk-folding-cube'>
+          <div className='sk-cube1 sk-cube' />
+          <div className='sk-cube2 sk-cube' />
+          <div className='sk-cube4 sk-cube' />
+          <div className='sk-cube3 sk-cube' />
+        </div>}
+>
 
-        <Columns zcss={['ta_c']} xLargeCol={12} largeCol={6} mediumCol={6} smallCol={2} gutter='10px'>
-          {gifs && gifs.map(item =>
-            <Column zcss={['']} xLargeCell={3} largeCell={2} mediumCell={2} smallCell={1}>
+        <Masonry style={{}}>
+          {gifs && gifs.map((item, index) =>
+            <Sack className='masonry_item' zcss={['mgB1e', 'ta_c']}>
               <GifItem {...item} />
-            </Column>
+              <Sack zcss={['ta_l']}>
+                <Avatar width={16}
+                  src={item.user ? item.user.avatar_url : 'http://zetgoo.com/images/glogo.png'}
+                  zcss={['isCircle']}
+              />
+                <Link href={item.user ? item.user.profile_url : 'http://zetgoo.com'}>
+                  {item.user ? item.user.display_name : 'no name'}
+                </Link>
+              </Sack>
+            </Sack>
         )}
-        </Columns>
-      </MasonryInfiniteScroller>
+        </Masonry>
+      </InfiniteScroll>
+
     )
   }
 }
